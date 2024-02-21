@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220427294892748157}
   - component: {fileID: 4669342915528819450}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,8 @@ GameObject:
   - component: {fileID: 2712341274756647504}
   - component: {fileID: 4605476026982832345}
   - component: {fileID: 3509445725925047709}
-  m_Layer: 0
+  - component: {fileID: 5728949622920088107}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -222,6 +223,20 @@ MonoBehaviour:
     CurrentProgress: 0
     Duration: 0.1
   DeadEffect: {fileID: 0}
+--- !u!114 &5728949622920088107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799418581342542430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcbaffb00a817d478e600b139801702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 0
+  itemtext: {fileID: 0}
 --- !u!1 &4860439030283024541
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8802615604968514348}
   - component: {fileID: 8837205746572583511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8804212339878131764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

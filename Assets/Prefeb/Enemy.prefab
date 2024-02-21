@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1513280730500352439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 536611905389833095}
   - component: {fileID: 8777600765435005477}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,8 @@ GameObject:
   - component: {fileID: 1352336614335046336}
   - component: {fileID: 5342266944551559511}
   - component: {fileID: 4162212461023895231}
-  m_Layer: 0
+  - component: {fileID: 3106718413708104382}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -210,7 +211,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -269,15 +270,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  PushForce: 10
+  PushForce: 1000
   DamagableFeedback: []
   AnythingFeedback: []
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+--- !u!114 &3106718413708104382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935032858487097761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05be581e85853464fafc2b16daa8c125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  Invulnerable:
+    CurrentProgress: 0
+    Duration: 0
+  DeadEffect: {fileID: 0}
 --- !u!1 &7491842303711742986
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4772536888759201027}
   - component: {fileID: 1070416123098609607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

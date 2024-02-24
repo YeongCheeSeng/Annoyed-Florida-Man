@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
     {
         ResetInvulnerable();
         PlayerDeath();
+        Debug.Log("Current Health: " + CurrentHealth);
     }
 
     private void ResetInvulnerable()

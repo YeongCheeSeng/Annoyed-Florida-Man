@@ -37,7 +37,6 @@ public class DamageOnTouch : MonoBehaviour
 
     private void Damagable(Collider2D col)
     {
-        Debug.Log("target hit");
         Health targetHealth = col.gameObject.GetComponent<Health>();
 
         Debug.Log(targetHealth);

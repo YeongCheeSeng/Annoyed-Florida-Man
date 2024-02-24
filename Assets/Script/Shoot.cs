@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -9,17 +10,16 @@ public class Shoot : MonoBehaviour
     public Transform SpawnPos;
 
     public float ShootInterval;
+    public float BurstInterval;
     public FireModes FireMode;
     public int BurstFireBulletAmount; // BurstFire not done yet
     public int BulletAmount;
     public float ReloadTime;
 
 
-    private float ShootCooldown;
+    private float ShootCooldown; // link with shoot interval
     private bool CanShoot;
-    private int BurstFireBulletAmountLeft;
     private int CurrentBullet;
-    private float ReloadTimeLeft;
 
     public enum FireModes
     {
@@ -31,9 +31,7 @@ public class Shoot : MonoBehaviour
     private void Start()
     {
         ShootCooldown = 0;
-        ReloadTimeLeft = 0;
-
-        BurstFireBulletAmountLeft = BurstFireBulletAmount;
+        CanShoot = true;
 
         CurrentBullet = BulletAmount;
     }
@@ -63,6 +61,9 @@ public class Shoot : MonoBehaviour
         {
             case FireModes.SingleFire:
             {
+                if (!CanShoot)
+                    return;
+
                 if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("SingleFire");
@@ -75,6 +76,9 @@ public class Shoot : MonoBehaviour
 
             case FireModes.Auto:
             {
+                if (!CanShoot)
+                    return;
+
                 if (Input.GetButton("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("AutoFire");
@@ -87,35 +91,49 @@ public class Shoot : MonoBehaviour
 
             case FireModes.BurstFire:
             {
+                if (!CanShoot)
+                    return;
+
                 if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("BurstFire");
-                    BurstShoot();
+                    StartCoroutine(BurstShoot());
                 }
                 break;
             }
         }
     }
 
-    public void BurstShoot() 
+    IEnumerator BurstShoot()
     {
-        for (BurstFireBulletAmountLeft = BurstFireBulletAmount; BurstFireBulletAmountLeft > 0; BurstFireBulletAmountLeft--)
+        int BurstFireBulletAmountLeft = BurstFireBulletAmount;
+
+        while (BurstFireBulletAmountLeft > 0)
         {
-            if (ShootCooldown <= 0)
-            {
-                GameObject.Instantiate(Projectile, transform.position, transform.rotation);
-                CurrentBullet--;
-            }
-            Debug.Log("BurstFireAmountLeft: " + BurstFireBulletAmountLeft);
+            GameObject.Instantiate(Projectile, transform.position, transform.rotation);
+            CurrentBullet--;
         }
-        //BurstFireBulletAmountLeft = BurstFireBulletAmount;
+
+        BurstFireBulletAmountLeft--;
+        yield return new WaitForSeconds(BurstInterval);
     }
 
     private void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (CurrentBullet == BulletAmount)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.R) || CurrentBullet == 0)
         {           
             CurrentBullet = BulletAmount;
+            StartCoroutine(reload());
         }
+    }
+
+    IEnumerator reload()
+    {
+        CanShoot = false;
+        yield return new WaitForSeconds(ReloadTime);
+        CanShoot = true;
     }
 }

@@ -97,7 +97,12 @@ public class Shoot : MonoBehaviour
                 if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("BurstFire");
-                    StartCoroutine(BurstShoot());
+                    int BurstFireBulletLeft = BurstFireBulletAmount;
+                    while (BurstFireBulletLeft > 0)
+                    {
+                        StartCoroutine(BurstShoot());
+                        BurstFireBulletLeft--;
+                    }
                 }
                 break;
             }
@@ -106,15 +111,8 @@ public class Shoot : MonoBehaviour
 
     IEnumerator BurstShoot()
     {
-        int BurstFireBulletAmountLeft = BurstFireBulletAmount;
-
-        while (BurstFireBulletAmountLeft > 0)
-        {
-            GameObject.Instantiate(Projectile, transform.position, transform.rotation);
-            CurrentBullet--;
-        }
-
-        BurstFireBulletAmountLeft--;
+        GameObject.Instantiate(Projectile, transform.position, transform.rotation);
+        CurrentBullet--;
         yield return new WaitForSeconds(BurstInterval);
     }
 
@@ -123,7 +121,7 @@ public class Shoot : MonoBehaviour
         if (CurrentBullet == BulletAmount)
             return;
 
-        if (Input.GetKeyDown(KeyCode.R) || CurrentBullet == 0)
+        if (Input.GetKeyDown(KeyCode.R) || CurrentBullet <= 0)
         {           
             CurrentBullet = BulletAmount;
             StartCoroutine(reload());

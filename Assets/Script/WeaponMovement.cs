@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponMovement : Movement
 {
+
     protected override void HandleRotation()
     {
         //if (_weaponHandler == null || _weaponHandler.CurrentWeapon == null)
@@ -20,5 +21,6 @@ public class WeaponMovement : Movement
         float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90f;
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
     }
 }

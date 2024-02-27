@@ -7,7 +7,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject Projectile;
-    public Transform SpawnPos;
+    //public Transform SpawnPos;
 
     public float ShootInterval;
     public float BurstInterval;

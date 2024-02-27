@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     Collider2D _collider2D;
     //protected WeaponHandler _weaponHandler;
 
-    public float MovementSpeed = 10;
+    private float MovementSpeed = 2;
     protected const float m_MovementSmoothing = 0.05f;
 
     protected Vector2 _inputDirection;

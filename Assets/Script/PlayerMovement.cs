@@ -5,12 +5,34 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerMovement : Movement
+public class PlayerMovement : MonoBehaviour
 {
+    public float moveSpeed = 5f;
 
-    protected override void HandleInput()
+    public Rigidbody2D rb;
+    //public SpriteRenderer spriteRenderer;
+    public Vector2 movement;
+
+    private void Start()
     {
-        _inputDirection = new Vector2(x: Input.GetAxis("Horizontal"), y: Input.GetAxis("Vertical"));
+        rb = GetComponent<Rigidbody2D>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+
+        //}
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
 }

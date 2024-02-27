@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8366814236668378160}
   - component: {fileID: 2712341274756647504}
   - component: {fileID: 4605476026982832345}
-  - component: {fileID: 3509445725925047709}
+  - component: {fileID: 2945463000694082071}
   m_Layer: 8
   m_Name: Weapon
   m_TagString: Weapon
@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e88f4021cf46a429bce80431c223e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 10
 --- !u!50 &2712341274756647504
 Rigidbody2D:
   serializedVersion: 4
@@ -206,7 +205,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3509445725925047709
+--- !u!114 &2945463000694082071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,14 +214,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4799418581342542430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05be581e85853464fafc2b16daa8c125, type: 3}
+  m_Script: {fileID: 11500000, guid: 62b18d1285e073843982e2ed92a7f8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  Invulnerable:
-    CurrentProgress: 0
-    Duration: 0.1
-  DeadEffect: {fileID: 0}
+  Player: {fileID: 0}
+  Offset_X: 2
+  Offset_Y: 0
+  MinZRotation: 0
+  MaxZRotation: 0
+  fPFlipedX: 0
 --- !u!1 &4860439030283024541
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,8 +332,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6318651162251427737}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95, y: 2.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95000005, y: 2.2000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

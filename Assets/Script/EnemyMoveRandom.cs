@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
-public class EnemyMoveRandom : Movement
+public class EnemyMoveRandom : MonoBehaviour
 {
     [SerializeField]
     float speed;
@@ -21,9 +21,17 @@ public class EnemyMoveRandom : Movement
         SetNewDestination();
     }
 
-    protected override void HandleInput()
+    private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
+        Vector2 direction = (wayPoint - (Vector2)transform.position).normalized;
+
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0,0,angle);
+        }
+
         if (Vector2.Distance(transform.position, wayPoint) < range)
         {
             SetNewDestination();

@@ -323,9 +323,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  PushForce: 1000
-  DamagableFeedback: []
-  AnythingFeedback: []
+  PushForce: 1500
+  DamagableFeedback:
+  - {fileID: 9182383168928530943, guid: dcf9360d958c7d54e8e63a396baf750c, type: 3}
+  AnythingFeedback:
+  - {fileID: 0}
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 64

@@ -7,33 +7,39 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject Projectile;
-    //public Transform SpawnPos;
+    public GameObject[] ShootFeedback;
+    public GameObject[] ReloadFeedback;
+    private Transform FeedbackSpawnPos;
+
+    public TMP_Text RemainingBulletLeft;
 
     public float ShootInterval;
-    public float BurstInterval;
+    //public float BurstInterval;
     public FireModes FireMode;
-    public int BurstFireBulletAmount; // BurstFire not done yet
+    //public int BurstFireBulletAmount; // BurstFire not done yet
     public int BulletAmount;
     public float ReloadTime;
-
 
     private float ShootCooldown; // link with shoot interval
     private bool CanShoot;
     private int CurrentBullet;
+    private int NoRepeat;
 
     public enum FireModes
     {
         SingleFire, // =0
         Auto,   // =1
-        BurstFire   // =2
+        //BurstFire   // =2
     }
 
     private void Start()
     {
         ShootCooldown = 0;
         CanShoot = true;
+        NoRepeat = 1;
 
         CurrentBullet = BulletAmount;
+        FeedbackSpawnPos = GetComponent<Transform>();
     }
 
 
@@ -50,11 +56,13 @@ public class Shoot : MonoBehaviour
 
         PlayerShoot();
         Reload();
+        UIReload();
 
         //Debug.Log("Shoot CoolDown: " + ShootCooldown);
     }
 
 
+    //Fire
     public void PlayerShoot()
     {
         switch (FireMode)
@@ -70,6 +78,7 @@ public class Shoot : MonoBehaviour
                     GameObject.Instantiate(Projectile, transform.position, transform.rotation);
                     CurrentBullet--;
                     ShootCooldown = ShootInterval;
+                    SpawnShootFeedback();
                 }
                 break;
             }
@@ -85,46 +94,57 @@ public class Shoot : MonoBehaviour
                     GameObject.Instantiate(Projectile, transform.position, transform.rotation);
                     CurrentBullet--; 
                     ShootCooldown = ShootInterval;
+                    SpawnShootFeedback();
                 }
                 break;  
             }
 
-            case FireModes.BurstFire:
-            {
-                if (!CanShoot)
-                    return;
+            //case FireModes.BurstFire:
+            //{
+            //    if (!CanShoot)
+            //        return;
 
-                if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
-                {
-                    Debug.Log("BurstFire");
-                    int BurstFireBulletLeft = BurstFireBulletAmount;
-                    while (BurstFireBulletLeft > 0)
-                    {
-                        StartCoroutine(BurstShoot());
-                        BurstFireBulletLeft--;
-                    }
-                }
-                break;
-            }
+            //    if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
+            //    {
+            //        Debug.Log("BurstFire");
+            //        int BurstFireBulletLeft = BurstFireBulletAmount;
+            //        while (BurstFireBulletLeft > 0)
+            //        {
+            //            StartCoroutine(BurstShoot());
+            //            BurstFireBulletLeft--;
+            //        }
+            //    }
+            //    break;
+            //}
         }
     }
 
-    IEnumerator BurstShoot()
-    {
-        GameObject.Instantiate(Projectile, transform.position, transform.rotation);
-        CurrentBullet--;
-        yield return new WaitForSeconds(BurstInterval);
-    }
+    //IEnumerator BurstShoot()
+    //{
+    //    GameObject.Instantiate(Projectile, transform.position, transform.rotation);
+    //    CurrentBullet--;
+    //    SpawnShootFeedback();
+    //    yield return new WaitForSeconds(BurstInterval);
+    //}
 
+    //Reload
     private void Reload()
     {
         if (CurrentBullet == BulletAmount)
             return;
 
-        if (Input.GetKeyDown(KeyCode.R) || CurrentBullet <= 0)
-        {           
-            CurrentBullet = BulletAmount;
+        if (Input.GetKeyDown(KeyCode.R) && NoRepeat == 1)
+        {   
+            SpawnReloadFeedback();
             StartCoroutine(reload());
+            NoRepeat--;
+        }
+
+        if (CurrentBullet == 0 && NoRepeat == 1)
+        {
+            SpawnReloadFeedback();
+            StartCoroutine(reload());
+            NoRepeat--;
         }
     }
 
@@ -132,6 +152,43 @@ public class Shoot : MonoBehaviour
     {
         CanShoot = false;
         yield return new WaitForSeconds(ReloadTime);
+        CurrentBullet = BulletAmount;
         CanShoot = true;
+        NoRepeat = 1;
+    }
+
+    void SpawnShootFeedback()
+    {
+        foreach (var ShootFeedback in ShootFeedback)
+        {
+            GameObject spawnfeedback = GameObject.Instantiate(ShootFeedback, FeedbackSpawnPos.position, FeedbackSpawnPos.rotation);
+            Destroy(spawnfeedback, 1f);
+        }
+    }
+
+    void SpawnReloadFeedback()
+    {
+        foreach (var ReloadFeedback in ReloadFeedback)
+        {
+            GameObject spawnfeedback = GameObject.Instantiate(ReloadFeedback, FeedbackSpawnPos.position, FeedbackSpawnPos.rotation);
+            Destroy(spawnfeedback, 1f);
+        }       
+    }
+
+    void UIReload()
+    {
+        if (RemainingBulletLeft == null)
+            return;
+
+        if (CurrentBullet > 0)
+        {
+            RemainingBulletLeft.text = "Bullet: " + CurrentBullet;
+        }
+
+        if (CanShoot == false)
+        {
+            RemainingBulletLeft.text = "Bullet: Reloading";
+        }
+        
     }
 }

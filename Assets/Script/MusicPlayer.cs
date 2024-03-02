@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundEffect : MonoBehaviour
 {
+    public GameObject Player;
     public AudioSource _AudioSource;
 
     // Start is called before the first frame update
@@ -15,7 +16,10 @@ public class SoundEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlaySoundEffect();
+        if (Player == null)
+            _AudioSource.enabled = false;
+
+        PlaySoundEffect();                   
     }
 
     public void PlaySoundEffect()

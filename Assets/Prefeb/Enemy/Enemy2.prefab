@@ -398,7 +398,8 @@ MonoBehaviour:
   Invulnerable:
     CurrentProgress: 0
     Duration: 0
-  DeadEffect: {fileID: 0}
+  DeadEffect: {fileID: 8180955560985483365, guid: bc770067ae061c44a8fcf92ff2cdaee0, type: 3}
+  EffectLifeTime: 0.5
 --- !u!1 &7959403807312141109
 GameObject:
   m_ObjectHideFlags: 0

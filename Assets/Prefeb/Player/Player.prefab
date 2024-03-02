@@ -211,6 +211,7 @@ MonoBehaviour:
     CurrentProgress: 0
     Duration: 0.2
   DeadEffect: {fileID: 9182383168928530943, guid: 323d333dd8c0dda409dc325f006f8f43, type: 3}
+  EffectLifeTime: 1
 --- !u!114 &6064565966632971201
 MonoBehaviour:
   m_ObjectHideFlags: 0

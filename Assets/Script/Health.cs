@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
     private bool _canDamage = true;
 
     public GameObject DeadEffect;
+    public float EffectLifeTime;
 
     private void Start()
     {
@@ -81,7 +82,7 @@ public class Health : MonoBehaviour
         OnDeath?.Invoke();
         Destroy(this.gameObject);
         GameObject DeadSpawn = GameObject.Instantiate(DeadEffect, transform.position, transform.rotation);
-        Destroy(DeadSpawn, 1f);
+        Destroy(DeadSpawn, EffectLifeTime);
     }
 
     public void Heal(float healAmount)

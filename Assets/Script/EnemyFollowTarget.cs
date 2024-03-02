@@ -9,6 +9,7 @@ public class EnemyFollowTarget : MonoBehaviour
     public float distanceBetween;
 
     private float distance;
+    public bool _isFollowingTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,12 @@ public class EnemyFollowTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null)     
+        if (target == null)
+        {
             return;
+        }
 
+        _isFollowingTarget = false;
         distance = Vector2.Distance(transform.position, target.transform.position);
         Vector3 direction = target.transform.position - transform.position;
         direction.y = 0f;
@@ -30,6 +34,7 @@ public class EnemyFollowTarget : MonoBehaviour
 
         if (distance < distanceBetween)
         {
+            _isFollowingTarget = true;
             transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
             Vector3 newRotation = new Vector3(0, 0, angle);
             transform.rotation = Quaternion.Euler(newRotation);

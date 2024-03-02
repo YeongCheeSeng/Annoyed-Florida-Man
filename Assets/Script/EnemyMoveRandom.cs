@@ -15,14 +15,19 @@ public class EnemyMoveRandom : MonoBehaviour
     float maxDistance;
 
     Vector2 wayPoint;
+    public EnemyFollowTarget FollowTarget;
 
     private void Start()
     {
+        FollowTarget = GetComponent<EnemyFollowTarget>();
         SetNewDestination();
     }
 
     private void Update()
     {
+        if (FollowTarget._isFollowingTarget == true)
+            return;
+
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
         Vector2 direction = (wayPoint - (Vector2)transform.position).normalized;
 

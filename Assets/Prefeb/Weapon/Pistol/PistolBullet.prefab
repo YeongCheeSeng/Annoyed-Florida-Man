@@ -227,7 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   PushForce: 10
-  DamagableFeedback: []
+  DamagableFeedback:
+  - {fileID: 9182383168928530943, guid: dcf9360d958c7d54e8e63a396baf750c, type: 3}
   AnythingFeedback: []
   TargetLayerMask:
     serializedVersion: 2

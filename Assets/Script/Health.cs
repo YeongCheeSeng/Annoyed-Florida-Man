@@ -27,10 +27,15 @@ public class Health : MonoBehaviour
 
     public Cooldown Invulnerable;
 
-    private float _currentHealth = 10f;
+    private float _currentHealth;
     private bool _canDamage = true;
 
     public GameObject DeadEffect;
+
+    private void Start()
+    {
+        _currentHealth = MaxHealth;
+    }
 
     // Update is called once per frame
     private void Update()

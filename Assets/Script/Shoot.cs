@@ -11,6 +11,8 @@ public class Shoot : MonoBehaviour
     public GameObject[] ReloadFeedback;
     private Transform FeedbackSpawnPos;
 
+    public string WeaponName;
+    public TMP_Text CurrentWeapon;
     public TMP_Text RemainingBulletLeft;
 
     public float ShootInterval;
@@ -57,6 +59,7 @@ public class Shoot : MonoBehaviour
         PlayerShoot();
         Reload();
         UIReload();
+        UICurrentWeapon();
 
         //Debug.Log("Shoot CoolDown: " + ShootCooldown);
     }
@@ -175,6 +178,7 @@ public class Shoot : MonoBehaviour
         }       
     }
 
+    //UI
     void UIReload()
     {
         if (RemainingBulletLeft == null)
@@ -188,7 +192,15 @@ public class Shoot : MonoBehaviour
         if (CanShoot == false)
         {
             RemainingBulletLeft.text = "Bullet: Reloading";
-        }
+        }        
+    }
+
+    void UICurrentWeapon()
+    {
+        if (CurrentWeapon == null)
+            return;
+
+        CurrentWeapon.text = "Weapon: " + WeaponName;
         
     }
 }

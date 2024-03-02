@@ -537,6 +537,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2151593518403038316, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
+      propertyPath: WeaponName
+      value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151593518403038316, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
       propertyPath: FeedbackSpawnPos
       value: 
       objectReference: {fileID: 2377147175668236485}
@@ -756,6 +760,10 @@ PrefabInstance:
     - target: {fileID: 6569409831430874896, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916755999862585695, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
+      propertyPath: WeaponName
+      value: Brick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

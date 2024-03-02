@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public Animator animator;
 
     public Rigidbody2D rb;
     //public SpriteRenderer spriteRenderer;
@@ -24,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-
-        //}
+        Animation();
     }
 
     private void FixedUpdate()
@@ -35,4 +33,11 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
+    private void Animation()
+    {
+        if (movement.magnitude > 0.01f)
+            animator.SetBool("_isMoving", true);
+        else
+            animator.SetBool("_isMoving", false);        
+    }
 }

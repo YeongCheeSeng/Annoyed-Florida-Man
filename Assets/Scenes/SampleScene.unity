@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: RemainingBulletLeft
       value: 
       objectReference: {fileID: 1626293347}
+    - target: {fileID: 6064565966632971201, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1610232114}
     - target: {fileID: 6090807067777065173, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8

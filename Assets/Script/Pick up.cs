@@ -22,7 +22,7 @@ public class PickUp : MonoBehaviour
             DeactivateWeaponWithTag(weaponTag);
             Weapon.SetActive(true);
             SpawnFeedback();
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);          
         }
     }
     void SpawnFeedback()

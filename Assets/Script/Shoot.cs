@@ -21,11 +21,14 @@ public class Shoot : MonoBehaviour
     //public int BurstFireBulletAmount; // BurstFire not done yet
     public int BulletAmount;
     public float ReloadTime;
+    public Animator animator;
+
 
     private float ShootCooldown; // link with shoot interval
     private bool CanShoot;
     private int CurrentBullet;
     private int NoRepeat;
+    private bool isShooting;
 
     public enum FireModes
     {
@@ -42,6 +45,7 @@ public class Shoot : MonoBehaviour
 
         CurrentBullet = BulletAmount;
         FeedbackSpawnPos = GetComponent<Transform>();
+        isShooting = false;
     }
 
 
@@ -60,6 +64,7 @@ public class Shoot : MonoBehaviour
         Reload();
         UIReload();
         UICurrentWeapon();
+        Animation();
 
         //Debug.Log("Shoot CoolDown: " + ShootCooldown);
     }
@@ -78,10 +83,7 @@ public class Shoot : MonoBehaviour
                 if (Input.GetButtonDown("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("SingleFire");
-                    GameObject.Instantiate(Projectile, transform.position, transform.rotation);
-                    CurrentBullet--;
-                    ShootCooldown = ShootInterval;
-                    SpawnShootFeedback();
+                    ShootProjectile();
                 }
                 break;
             }
@@ -91,13 +93,11 @@ public class Shoot : MonoBehaviour
                 if (!CanShoot)
                     return;
 
+                //if (Input.GetButton("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 if (Input.GetButton("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
                 {
                     Debug.Log("AutoFire");
-                    GameObject.Instantiate(Projectile, transform.position, transform.rotation);
-                    CurrentBullet--; 
-                    ShootCooldown = ShootInterval;
-                    SpawnShootFeedback();
+                    ShootProjectile();
                 }
                 break;  
             }
@@ -122,6 +122,22 @@ public class Shoot : MonoBehaviour
         }
     }
 
+    private void ShootProjectile()
+    {
+        GameObject.Instantiate(Projectile, transform.position, transform.rotation);
+        ShootCooldown = ShootInterval;
+        CurrentBullet--;
+        SpawnShootFeedback();
+        StartCoroutine(IShootCooldown());
+    }
+
+    IEnumerator IShootCooldown()
+    {
+        isShooting = true;
+        yield return new WaitForSeconds(ShootInterval);
+        isShooting = false;
+    }
+
     //IEnumerator BurstShoot()
     //{
     //    GameObject.Instantiate(Projectile, transform.position, transform.rotation);
@@ -129,6 +145,7 @@ public class Shoot : MonoBehaviour
     //    SpawnShootFeedback();
     //    yield return new WaitForSeconds(BurstInterval);
     //}
+
 
     //Reload
     private void Reload()
@@ -160,6 +177,7 @@ public class Shoot : MonoBehaviour
         NoRepeat = 1;
     }
 
+    //Spawn Feedback
     void SpawnShootFeedback()
     {
         foreach (var ShootFeedback in ShootFeedback)
@@ -202,5 +220,15 @@ public class Shoot : MonoBehaviour
 
         CurrentWeapon.text = "Weapon: " + WeaponName;
         
+    }
+
+    //Animation
+    private void Animation()
+    {
+        if (isShooting == true)
+            animator.SetBool("_isShooting", true);
+
+        if (isShooting == false)
+            animator.SetBool("_isShooting", false);
     }
 }

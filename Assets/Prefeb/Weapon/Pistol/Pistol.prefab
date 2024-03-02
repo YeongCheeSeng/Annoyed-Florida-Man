@@ -220,6 +220,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   Offset_X: 2
   Offset_Y: 0
+  transformX: 0
+  transformY: 0
   MinZRotation: 0
   MaxZRotation: 0
   fPFlipedX: 0
@@ -352,11 +354,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 6846879744770331636, guid: da94c262e4d7658418c68be6df374521, type: 3}
-  SpawnPos: {fileID: 703644513152525964}
+  ShootFeedback: []
+  ReloadFeedback: []
+  RemainingBulletLeft: {fileID: 0}
   ShootInterval: 0.2
-  BurstInterval: 0.2
   FireMode: 1
-  BurstFireBulletAmount: 3
   BulletAmount: 12
   ReloadTime: 2
 --- !u!1 &8120970093304239419

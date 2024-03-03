@@ -73,7 +73,6 @@ public class DamageOnTouch : MonoBehaviour
     private void TryDamage(Health targetHealth)
     {
         targetHealth.Damage(Damage, transform.gameObject);
-        Debug.Log("Hit " + targetHealth.CurrentHealth);
         OnHit?.Invoke();
     }
 

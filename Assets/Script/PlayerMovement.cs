@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     //public SpriteRenderer spriteRenderer;
     public Vector2 movement;
 
+    private bool _facingRight = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +27,16 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.x > 0 && !_facingRight)
+        {
+            Flip();
+        }
+
+        if (movement.x < 0 && _facingRight)
+        {
+            Flip();
+        }
 
         Animation();
     }
@@ -39,5 +52,14 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("_isMoving", true);
         else
             animator.SetBool("_isMoving", false);        
+    }
+
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        _facingRight = !_facingRight;
     }
 }

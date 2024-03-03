@@ -33,6 +33,10 @@ public class Health : MonoBehaviour
     public GameObject DeadEffect;
     public float EffectLifeTime;
 
+    public float _score = 10f;
+    private ScoreManager _scoreManager;
+
+
     private void Start()
     {
         _currentHealth = MaxHealth;
@@ -43,7 +47,6 @@ public class Health : MonoBehaviour
     {
         ResetInvulnerable();
         PlayerDeath();
-        Debug.Log("Current Health: " + CurrentHealth);
     }
 
     private void ResetInvulnerable()
@@ -80,6 +83,7 @@ public class Health : MonoBehaviour
     public void Die()
     {
         OnDeath?.Invoke();
+        ScoreManager.TotalScore += _score;
         Destroy(this.gameObject);
         GameObject DeadSpawn = GameObject.Instantiate(DeadEffect, transform.position, transform.rotation);
         Destroy(DeadSpawn, EffectLifeTime);

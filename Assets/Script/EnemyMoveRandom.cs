@@ -17,6 +17,8 @@ public class EnemyMoveRandom : MonoBehaviour
     Vector2 wayPoint;
     public EnemyFollowTarget FollowTarget;
 
+    private bool _facingRight = true;
+
     private void Start()
     {
         FollowTarget = GetComponent<EnemyFollowTarget>();
@@ -34,7 +36,22 @@ public class EnemyMoveRandom : MonoBehaviour
         if (direction != Vector2.zero)
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0,0,angle);
+
+            if (direction.x > 0)
+            {
+                Vector3 currentScale = gameObject.transform.localScale;
+                currentScale.x = 1;
+                gameObject.transform.localScale = currentScale;
+            }
+
+            if (direction.x < 0)
+            {
+                Vector3 currentScale = gameObject.transform.localScale;
+                currentScale.x = -1;
+                gameObject.transform.localScale = currentScale;
+            }
+
+            //transform.rotation = Quaternion.Euler(0,0,angle);
         }
 
         if (Vector2.Distance(transform.position, wayPoint) < range)
@@ -48,4 +65,10 @@ public class EnemyMoveRandom : MonoBehaviour
         wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
     }
 
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+    }
 }

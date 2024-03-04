@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //public SpriteRenderer spriteRenderer;
     public Vector2 movement;
 
-    private bool _facingRight = true;
+    public bool _facingRight = true;
 
     private void Start()
     {

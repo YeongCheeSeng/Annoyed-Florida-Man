@@ -14,7 +14,10 @@ public class FollowPlayer : MonoBehaviour
     public float transformY;
     public float MinZRotation;
     public float MaxZRotation;
-    [SerializeField] private bool fPFlipedX=false;
+
+    private Transform PlayerCurrentTF;
+    //private PlayerMovement facing;
+    [SerializeField] private bool fPFlipedX = false;
     //private GraphicFixed _graphicFixed;
 
     //private Transform localTrans;
@@ -22,11 +25,11 @@ public class FollowPlayer : MonoBehaviour
     //public float maxYRot = 90f;
     //public float minYPot = -90f;
 
-
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindWithTag("Player").transform;
+        PlayerCurrentTF = Player;
         //_transform = GetComponent<Transform>();
         //_graphicFixed = GetComponent<GraphicFixed>();
 
@@ -38,26 +41,26 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+
+        if (Input.GetKey(KeyCode.A) && fPFlipedX == false)
         {
             fPFlipedX = true;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && fPFlipedX == true)
         {
             fPFlipedX = false;
         }
 
         if (fPFlipedX == false)
         {
-            transformX = Player.position.x + (Offset_X / 2);
+            transformX = PlayerCurrentTF.position.x + (Offset_X / 2);
         }
         else if (fPFlipedX == true)
         {
-            transformX = Player.position.x - (Offset_X / 2) ;
+            transformX = PlayerCurrentTF.position.x - (Offset_X / 2);
         }
-        transformY = Player.position.y + (Offset_Y / 2);
+        transformY = PlayerCurrentTF.position.y + (Offset_Y / 2);
         transform.position = new Vector3(transformX, transformY, transform.position.z);
-
 
         //if (_transform.rotation.z == MinZRotation)
         //{
@@ -68,6 +71,8 @@ public class FollowPlayer : MonoBehaviour
 
         //LimitRot();
     }
+
+
 
     //private void LimitRot()
     //{

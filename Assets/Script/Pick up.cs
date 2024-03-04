@@ -11,6 +11,7 @@ public class PickUp : MonoBehaviour
     public LayerMask IgnoreLayerMask;
 
     private string weaponTag = "Weapon";
+    private PlayerMovement _facing;
 
     private void OnTriggerEnter2D(Collider2D col)
     {

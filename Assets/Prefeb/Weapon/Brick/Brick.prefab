@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -0.48, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5407307911609768630}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3627543963486656765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d144273ec8c43c41b230a89e1c83976, type: 3}
   m_Name: 
@@ -537,14 +537,14 @@ MonoBehaviour:
   - {fileID: 9182383168928530943, guid: f2ab42e040a88da408fca0a9843a84fb, type: 3}
   ReloadFeedback:
   - {fileID: 6321886024753315671, guid: febfe5b8edc025a4fb56ded547336251, type: 3}
-  FeedbackSpawnPos: {fileID: 6508301835470264945}
+  WeaponName: Brick
+  CurrentWeapon: {fileID: 0}
   RemainingBulletLeft: {fileID: 0}
   ShootInterval: 0.5
-  BurstInterval: 0.5
   FireMode: 0
-  BurstFireBulletAmount: 3
   BulletAmount: 3
   ReloadTime: 1
+  animator: {fileID: 0}
 --- !u!114 &4239399110502540286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8348484205258517874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af95b5e7509bea64ea11b2f13ff974ea, type: 3}
   m_Name: 

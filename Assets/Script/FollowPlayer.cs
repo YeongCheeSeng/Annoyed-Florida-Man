@@ -10,14 +10,13 @@ public class FollowPlayer : MonoBehaviour
     //private Transform _transform; 
     public float Offset_X; 
     public float Offset_Y; 
-    public float transformX;
-    public float transformY;
-    public float MinZRotation;
-    public float MaxZRotation;
 
+    private float transformX;
+    private float transformY;
     private Transform currentPos;
-    //private PlayerMovement facing;
     [SerializeField] public bool fPFlipedX;
+
+    //private PlayerMovement facing;
     //private GraphicFixed _graphicFixed;
 
     //private Transform localTrans;
@@ -41,8 +40,6 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(fPFlipedX);
-
         if (Input.GetKey(KeyCode.A) && fPFlipedX == false)
         {
             fPFlipedX = true;

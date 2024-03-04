@@ -128,6 +128,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7756465141692529687, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
   m_PrefabInstance: {fileID: 935658510}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &69149804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69149797}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe576735014b35645946f7809d6b4079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 5
+  maxRotation: 360
+  minRotation: 0
 --- !u!224 &207309320 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5166818068587901916, guid: 1cf4e8f8df34f7848b8349017d4b77af, type: 3}
@@ -436,6 +451,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6711048500929370745, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711048500929370745, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      propertyPath: maxRotation
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711048500929370745, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      propertyPath: minRotation
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 6963421469158269568, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
       propertyPath: CurrentWeapon
       value: 
@@ -444,15 +471,13 @@ PrefabInstance:
       propertyPath: RemainingBulletLeft
       value: 
       objectReference: {fileID: 1626293347}
-    - target: {fileID: 8802359819043186094, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1852072244946949123, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7756465141692529687, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 69149804}
   m_SourcePrefab: {fileID: 100100000, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
 --- !u!1 &1000064983
 GameObject:

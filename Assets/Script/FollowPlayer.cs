@@ -15,9 +15,9 @@ public class FollowPlayer : MonoBehaviour
     public float MinZRotation;
     public float MaxZRotation;
 
-    private Transform PlayerCurrentTF;
+    private Transform currentPos;
     //private PlayerMovement facing;
-    [SerializeField] private bool fPFlipedX = false;
+    [SerializeField] public bool fPFlipedX;
     //private GraphicFixed _graphicFixed;
 
     //private Transform localTrans;
@@ -29,7 +29,7 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player").transform;
-        PlayerCurrentTF = Player;
+        currentPos = Player;
         //_transform = GetComponent<Transform>();
         //_graphicFixed = GetComponent<GraphicFixed>();
 
@@ -41,6 +41,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(fPFlipedX);
 
         if (Input.GetKey(KeyCode.A) && fPFlipedX == false)
         {
@@ -53,13 +54,13 @@ public class FollowPlayer : MonoBehaviour
 
         if (fPFlipedX == false)
         {
-            transformX = PlayerCurrentTF.position.x + (Offset_X / 2);
+            transformX = currentPos.position.x + (Offset_X / 2);
         }
         else if (fPFlipedX == true)
         {
-            transformX = PlayerCurrentTF.position.x - (Offset_X / 2);
+            transformX = currentPos.position.x - (Offset_X / 2);
         }
-        transformY = PlayerCurrentTF.position.y + (Offset_Y / 2);
+        transformY = currentPos.position.y + (Offset_Y / 2);
         transform.position = new Vector3(transformX, transformY, transform.position.z);
 
         //if (_transform.rotation.z == MinZRotation)

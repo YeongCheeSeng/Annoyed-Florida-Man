@@ -16,6 +16,9 @@ public class WeaponGraphic : MonoBehaviour
 
     private void Update()
     {
+        if (_isFacingLeft == null)
+            return;
+
         if (_isFacingLeft.fPFlipedX == false)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

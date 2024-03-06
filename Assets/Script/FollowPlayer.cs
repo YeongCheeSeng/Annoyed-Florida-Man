@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     public Transform Player;
     //private Transform _transform; 
     public float Offset_X; 
-    public float Offset_Y; 
+    public float Offset_Y;
 
     private float transformX;
     private float transformY;
@@ -29,6 +29,7 @@ public class FollowPlayer : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player").transform;
         currentPos = Player;
+
         //_transform = GetComponent<Transform>();
         //_graphicFixed = GetComponent<GraphicFixed>();
 
@@ -49,6 +50,11 @@ public class FollowPlayer : MonoBehaviour
             fPFlipedX = false;
         }
 
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
+        {
+            fPFlipedX = true;
+        }
+
         if (fPFlipedX == false)
         {
             transformX = currentPos.position.x + (Offset_X / 2);
@@ -59,6 +65,7 @@ public class FollowPlayer : MonoBehaviour
         }
         transformY = currentPos.position.y + (Offset_Y / 2);
         transform.position = new Vector3(transformX, transformY, transform.position.z);
+
 
         //if (_transform.rotation.z == MinZRotation)
         //{

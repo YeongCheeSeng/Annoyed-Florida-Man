@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: b086fb1815f98b64ba3bf41121fb9cb0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 867
+        width: 115
+        height: 98
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e31d20153412584390da36660c61d89
+      internalID: -750070191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 871
+        width: 98
+        height: 93
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75faf6903a52a98408502e9d46531953
+      internalID: 1471971692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 770
+        width: 273
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b71f294cef9ab45aed726ebdce7eed
+      internalID: -960025320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_11
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 542
+        width: 250
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98db2a29190f4544698abcefdc234278
+      internalID: 684818391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 542
+        width: 380
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a14aec10dd45a48b4fbf27c18637a5
+      internalID: 577703256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_13
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 542
+        width: 250
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8f234a3e47d2f4084276253310d812
+      internalID: -1797302339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 237
+        width: 260
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486fc4281dd2f4a418a369151b85edb8
+      internalID: -344301039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_17
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 306
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c88221f33a4c54a918a013c3ef04d4
+      internalID: -188664734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_18
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 240
+        width: 227
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc175360676b853449f8e9e8e8b1dfa8
+      internalID: -1183911248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_19
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 237
+        width: 235
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85983ca23d367a4da2015aaa81a00a7
+      internalID: 1945222451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponSprite(AFM) (1)_20
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 240
+        width: 188
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685bc3e9132b4154c81a9387688212ab
+      internalID: -106395659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      WeaponSprite(AFM) (1)_0: -750070191
+      WeaponSprite(AFM) (1)_1: 1471971692
+      WeaponSprite(AFM) (1)_10: -50593365
+      WeaponSprite(AFM) (1)_11: 684818391
+      WeaponSprite(AFM) (1)_12: 577703256
+      WeaponSprite(AFM) (1)_13: -1797302339
+      WeaponSprite(AFM) (1)_14: -164129999
+      WeaponSprite(AFM) (1)_15: -239609533
+      WeaponSprite(AFM) (1)_16: -344301039
+      WeaponSprite(AFM) (1)_17: -188664734
+      WeaponSprite(AFM) (1)_18: -1183911248
+      WeaponSprite(AFM) (1)_19: 1945222451
+      WeaponSprite(AFM) (1)_2: -960025320
+      WeaponSprite(AFM) (1)_20: -106395659
+      WeaponSprite(AFM) (1)_21: 1906621935
+      WeaponSprite(AFM) (1)_22: 2019289215
+      WeaponSprite(AFM) (1)_23: 2059250460
+      WeaponSprite(AFM) (1)_24: -1722853869
+      WeaponSprite(AFM) (1)_25: -2078439754
+      WeaponSprite(AFM) (1)_26: 1609893311
+      WeaponSprite(AFM) (1)_27: 2083559206
+      WeaponSprite(AFM) (1)_28: 1530981177
+      WeaponSprite(AFM) (1)_29: 1069005450
+      WeaponSprite(AFM) (1)_3: 504351253
+      WeaponSprite(AFM) (1)_30: -1120475033
+      WeaponSprite(AFM) (1)_31: -791531993
+      WeaponSprite(AFM) (1)_4: 1615522655
+      WeaponSprite(AFM) (1)_5: -364069944
+      WeaponSprite(AFM) (1)_6: 123041791
+      WeaponSprite(AFM) (1)_7: 703490892
+      WeaponSprite(AFM) (1)_8: -1458453145
+      WeaponSprite(AFM) (1)_9: 584290239
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

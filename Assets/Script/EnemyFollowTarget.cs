@@ -25,10 +25,10 @@ public class EnemyFollowTarget : MonoBehaviour
             return;
         }
 
-        _isFollowingTarget = false;
+        _isFollowingTarget = true;
         distance = Vector2.Distance(transform.position, target.transform.position);
         Vector3 direction = target.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
         if (distance < distanceBetween)
         {

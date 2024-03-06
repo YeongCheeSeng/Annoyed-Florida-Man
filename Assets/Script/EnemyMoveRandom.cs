@@ -35,7 +35,7 @@ public class EnemyMoveRandom : MonoBehaviour
 
         if (direction != Vector2.zero)
         {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             if (direction.x > 0)
             {

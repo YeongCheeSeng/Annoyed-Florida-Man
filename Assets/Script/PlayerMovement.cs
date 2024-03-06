@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool _facingRight = true;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        
+
+        if (movement.x > 0 && movement.y > 0) 
+        {
+            return ;
+        }
 
         if (movement.x > 0 && !_facingRight)
         {
@@ -43,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
     private void Animation()

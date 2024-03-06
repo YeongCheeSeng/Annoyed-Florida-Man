@@ -4,7 +4,7 @@ using System.Threading;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public float Speed;
     public float LifeTime = 1f;
@@ -23,8 +23,8 @@ public class Projectile : MonoBehaviour
         if (_rigidbody == null)
             return;
 
-        _rigidbody.AddRelativeForce(new Vector2(x: 0f, y: Speed));
-        //_rigidbody.velocity = transform.up * Speed;
+        //_rigidbody.AddRelativeForce(new Vector2(x: 0f, y: Speed));
+        _rigidbody.velocity = transform.up * Speed;
 
         _damageOnTouch = GetComponent<DamageOnTouch>();
     }
@@ -58,4 +58,3 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
-

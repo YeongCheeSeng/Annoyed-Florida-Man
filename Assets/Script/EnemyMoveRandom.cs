@@ -15,7 +15,7 @@ public class EnemyMoveRandom : MonoBehaviour
     float maxDistance;
 
     Vector2 wayPoint;
-    public EnemyFollowTarget FollowTarget;
+    private EnemyFollowTarget FollowTarget;
 
     private bool _facingRight = true;
 

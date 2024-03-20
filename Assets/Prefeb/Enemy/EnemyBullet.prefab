@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 383982613966213275}
   - component: {fileID: 1735199922180216243}
   - component: {fileID: 8880408783281749453}
+  - component: {fileID: 4007096952695412529}
   m_Layer: 9
   m_Name: EnemyBullet
   m_TagString: Projectile
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470322548788691145}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1.2515856, y: 0.26254532, z: 0.30010197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,7 +37,7 @@ Transform:
   - {fileID: 5480059602532770677}
   - {fileID: 6153233841250716266}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &3908057564805312992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,10 +126,10 @@ MonoBehaviour:
   LifeTime: 1
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 576
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 128
 --- !u!114 &8880408783281749453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 2
   PushForce: 10
-  DamagableFeedback: []
+  DamagableFeedback:
+  - {fileID: 9182383168928530943, guid: dcf9360d958c7d54e8e63a396baf750c, type: 3}
   AnythingFeedback: []
   TargetLayerMask:
     serializedVersion: 2
@@ -151,6 +153,25 @@ MonoBehaviour:
   IgnoreLayerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4007096952695412529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470322548788691145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05be581e85853464fafc2b16daa8c125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 1
+  Invulnerable:
+    CurrentProgress: 0
+    Duration: 0
+  DeadEffect: {fileID: 8180955560985483365, guid: bc770067ae061c44a8fcf92ff2cdaee0, type: 3}
+  EffectLifeTime: 0.5
+  _score: 10
 --- !u!1 &1784556501571827784
 GameObject:
   m_ObjectHideFlags: 0

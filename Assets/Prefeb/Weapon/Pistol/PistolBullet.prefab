@@ -205,11 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2000
-  PushForce: 50
-  LifeTime: 1
+  LifeTime: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   IgnoreLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -232,7 +231,7 @@ MonoBehaviour:
   AnythingFeedback: []
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 320

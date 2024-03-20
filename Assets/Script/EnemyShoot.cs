@@ -20,7 +20,7 @@ public class EnemyShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShootCooldown = 0;
+        ShootCooldown = ShootInterval;
         CanShoot = true;
 
         FeedbackSpawnPos = GetComponent<Transform>();

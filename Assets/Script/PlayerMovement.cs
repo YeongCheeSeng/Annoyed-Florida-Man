@@ -28,23 +28,11 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        
 
-        if (movement.x > 0 && movement.y > 0) 
-        {
-            return ;
-        }
+        Debug.Log("movement.x: " + movement.x);
+        Debug.Log("movement.y: " + movement.y);
 
-        if (movement.x > 0 && !_facingRight)
-        {
-            Flip();
-        }
-
-        if (movement.x < 0 && _facingRight)
-        {
-            Flip();
-        }
-
+        Flip();
         Animation();
     }
 
@@ -63,10 +51,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
 
-        _facingRight = !_facingRight;
+        if (movement.x > 0)
+        {
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x = 1;
+            gameObject.transform.localScale = currentScale;
+        }
+
+        if (movement.x < 0)
+        {
+            Vector3 currentScale = gameObject.transform.localScale;
+            currentScale.x = -1;
+            gameObject.transform.localScale = currentScale;
+        }
     }
 }

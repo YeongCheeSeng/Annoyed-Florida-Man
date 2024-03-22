@@ -34,8 +34,6 @@ public class DamageOnTouch : MonoBehaviour
     {
         Health targetHealth = col.gameObject.GetComponent<Health>();
 
-        Debug.Log(targetHealth);
-
         if (targetHealth == null)
             return;
 

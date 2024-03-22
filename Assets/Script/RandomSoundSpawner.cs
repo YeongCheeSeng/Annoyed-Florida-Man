@@ -32,7 +32,9 @@ public class RandomSoundSpawn : MonoBehaviour
         }
 
         if (Object == null || _isPlaying == true)
+        {
             return;
+        }
 
         SpawnFeedback();
     }

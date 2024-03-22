@@ -25,7 +25,6 @@ public class WeaponMovement : Movement
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-
     //private void RotationLimit()
     //{
     //    if (_isFacingLeft.fPFlipedX == true)

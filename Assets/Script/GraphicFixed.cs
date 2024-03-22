@@ -30,8 +30,10 @@ public class GraphicFixed : MonoBehaviour
         {
             Debug.Log("look right");
             flipedX = false;
-            _spriteRenderer.flipX = false;
-            
+            _spriteRenderer.flipX = false;   
         }
+
+        if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D))
+            return;
     }
 }

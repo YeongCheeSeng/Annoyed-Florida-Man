@@ -129,7 +129,7 @@ MonoBehaviour:
     m_Bits: 576
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
 --- !u!114 &8880408783281749453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_Bits: 64
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
 --- !u!114 &4007096952695412529
 MonoBehaviour:
   m_ObjectHideFlags: 0

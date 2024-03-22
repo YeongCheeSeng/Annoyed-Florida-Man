@@ -185,13 +185,14 @@ GameObject:
   - component: {fileID: 5271618672773538091}
   - component: {fileID: 3444281275686575208}
   - component: {fileID: 6529121456299579870}
+  - component: {fileID: 7575395034139969264}
   m_Layer: 7
   m_Name: Enemy5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6920005222228340916
 Transform:
   m_ObjectHideFlags: 0
@@ -354,9 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d224b9d53ecf14e858a071b6d06cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  range: 0.5
+  speed: 5
+  range: 1
   maxDistance: 3
+  waitTime: 0
 --- !u!114 &5271618672773538091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +382,7 @@ MonoBehaviour:
     m_Bits: 64
   IgnoreLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
 --- !u!114 &3444281275686575208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,10 +416,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnChance: 50
   SpawnInterval: 2
-  SoundLifeTime: 1
+  SoundLifeTime: 10
   Feedbacks:
   - {fileID: 5230998585668668904, guid: dd1f4604c15fe5f4ca395ca6594eb70c, type: 3}
   Object: {fileID: 6897505232378775301}
+--- !u!114 &7575395034139969264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897505232378775301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3878edc23109d9c4ab7178f60dcdc7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMaskToIgnore: 7
 --- !u!1 &7045203307068667864
 GameObject:
   m_ObjectHideFlags: 0

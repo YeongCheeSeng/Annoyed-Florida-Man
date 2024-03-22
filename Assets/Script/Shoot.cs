@@ -225,6 +225,9 @@ public class Shoot : MonoBehaviour
     //Animation
     private void Animation()
     {
+        if (animator == null)
+            return;
+
         if (isShooting == true)
             animator.SetBool("_isShooting", true);
 

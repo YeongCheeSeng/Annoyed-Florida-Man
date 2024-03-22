@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
@@ -41,29 +42,36 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) && fPFlipedX == false)
+        if (Player == null)
+            return;
+
+        Vector3 moveDirection = Player.GetComponent<PlayerMovement>().movement;
+
+        if (moveDirection.x > 0 && fPFlipedX == false)
         {
             fPFlipedX = true;
         }
-        else if (Input.GetKey(KeyCode.D) && fPFlipedX == true)
+        else if (moveDirection.x < 0 && fPFlipedX == true)
         {
             fPFlipedX = false;
         }
 
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
-        {
-            fPFlipedX = true;
-        }
+        //if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
+        //{
+        //    //fPFlipedX = true;
+        //    return;
+        //}
 
         if (fPFlipedX == false)
         {
-            transformX = currentPos.position.x + (Offset_X / 2);
+            transformX = currentPos.position.x - (Offset_X);
         }
         else if (fPFlipedX == true)
         {
-            transformX = currentPos.position.x - (Offset_X / 2);
+            transformX = currentPos.position.x + (Offset_X);
         }
-        transformY = currentPos.position.y + (Offset_Y / 2);
+
+        transformY = currentPos.position.y + (Offset_Y);
         transform.position = new Vector3(transformX, transformY, transform.position.z);
 
 

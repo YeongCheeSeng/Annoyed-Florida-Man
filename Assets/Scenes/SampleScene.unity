@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy4
       objectReference: {fileID: 0}
+    - target: {fileID: 459465212942231878, guid: 6be59dcb20df5c74ab99ee787d7bf6fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1580643628123046737, guid: 6be59dcb20df5c74ab99ee787d7bf6fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.81
@@ -870,6 +874,10 @@ PrefabInstance:
     - target: {fileID: 1618340832095189235, guid: a87ba9eda6f34c64487c3f0a17d714b4, type: 3}
       propertyPath: m_Name
       value: Boss1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618340832095189235, guid: a87ba9eda6f34c64487c3f0a17d714b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2281859978867375860, guid: a87ba9eda6f34c64487c3f0a17d714b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1041,6 +1049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy3
       objectReference: {fileID: 0}
+    - target: {fileID: 6403469233819396767, guid: 991247238fbda6f42a8790392310848c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6611527950833110356, guid: 991247238fbda6f42a8790392310848c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.11
@@ -1198,6 +1210,10 @@ PrefabInstance:
     - target: {fileID: 4352367511845045306, guid: 854910529389b674ea5dc2f4ad1473ff, type: 3}
       propertyPath: m_Name
       value: Enemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352367511845045306, guid: 854910529389b674ea5dc2f4ad1473ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5792583438545512532, guid: 854910529389b674ea5dc2f4ad1473ff, type: 3}
       propertyPath: target
@@ -1438,6 +1454,10 @@ PrefabInstance:
     - target: {fileID: 6897505232378775301, guid: 715771a9bbe5cee4da157a37edf7ea46, type: 3}
       propertyPath: m_Name
       value: Enemy5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897505232378775301, guid: 715771a9bbe5cee4da157a37edf7ea46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6920005222228340916, guid: 715771a9bbe5cee4da157a37edf7ea46, type: 3}
       propertyPath: m_LocalPosition.x

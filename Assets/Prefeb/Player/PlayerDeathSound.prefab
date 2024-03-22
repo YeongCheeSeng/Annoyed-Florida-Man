@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: e50688626ab86624fb768b5a4a0b7bc8, type: 3}
-  - {fileID: 8300000, guid: 2af4f5f6fa482974b95ae2215d36a36d, type: 3}
-  - {fileID: 8300000, guid: 385634d62daf408469b7228fcc61379c, type: 3}
-  - {fileID: 8300000, guid: 533ce5bebbe9e8d43b7c0c36149f411d, type: 3}
+  - {fileID: 8300000, guid: 027b2e10c7c9eea42b9c12d5c7e6b7ca, type: 3}
+  - {fileID: 8300000, guid: afaa22c4e879b5948861ed14b2387b27, type: 3}
+  - {fileID: 8300000, guid: 1b8894824e19bfb4186caa5ef4d0fc39, type: 3}
+  - {fileID: 8300000, guid: d7489263449f2be428f2c737646f91d6, type: 3}
   MinPitch: 0.9
   MaxPitch: 1.1
   MinVolume: 1.9

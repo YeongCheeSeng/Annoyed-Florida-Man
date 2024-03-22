@@ -103,6 +103,7 @@ public class Health : MonoBehaviour
         GameObject Player = GameObject.FindWithTag("Player");
 
         if (Player == null)
-        SceneManager.LoadScene("GameOver");
+            return;
+        //SceneManager.LoadScene("GameOver");
     }
 }

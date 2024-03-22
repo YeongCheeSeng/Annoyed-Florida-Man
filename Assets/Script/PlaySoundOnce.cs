@@ -28,6 +28,8 @@ public class PlaySoundOnce : MonoBehaviour
 
             _audioSource.PlayOneShot(AudioClips[randomAudioClip]);
         }
+
+        return;
     }
 
     // Update is called once per frame

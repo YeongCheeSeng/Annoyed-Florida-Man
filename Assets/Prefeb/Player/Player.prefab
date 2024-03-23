@@ -893,7 +893,9 @@ PrefabInstance:
       propertyPath: minRotation
       value: -90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2151593518403038316, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
+    - {fileID: 425415577664255062, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 169992762222615708, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
@@ -909,6 +911,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8120970093304239419, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3173256076925360016}
+    - targetCorrespondingSourceObject: {fileID: 6318651162251427737, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1679068925911717824}
   m_SourcePrefab: {fileID: 100100000, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
 --- !u!4 &2377147175668236485 stripped
 Transform:
@@ -966,6 +971,36 @@ MonoBehaviour:
   rotationSpeed: 5
   maxRotation: 360
   minRotation: 0
+--- !u!1 &9119457155324729808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6318651162251427737, guid: e97b72c1e9f442c4795f15273eb19381, type: 3}
+  m_PrefabInstance: {fileID: 2971964769149167177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1679068925911717824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119457155324729808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ed1b46205160641927c1002a0f1f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 6846879744770331636, guid: da94c262e4d7658418c68be6df374521, type: 3}
+  ShootFeedback:
+  - {fileID: 9182383168928530943, guid: 7f6e7ab83de8fa745aa2c6c7a8ff7fde, type: 3}
+  ReloadFeedback:
+  - {fileID: 6321886024753315671, guid: 9f0baf3c594d4124b921d5ceea21e828, type: 3}
+  WeaponName: Pistol
+  CurrentWeapon: {fileID: 0}
+  RemainingBulletLeft: {fileID: 0}
+  ShootInterval: 0.2
+  FireMode: 0
+  BulletAmount: 12
+  ReloadTime: 2
+  animator: {fileID: 3173256076925360016}
 --- !u!1001 &4566168443633376223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,11 +1093,46 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4239399110502540286, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
+    - {fileID: 6916755999862585695, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8348484205258517874, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2638988787694297204}
   m_SourcePrefab: {fileID: 100100000, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
+--- !u!1 &5513967416980879021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8348484205258517874, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}
+  m_PrefabInstance: {fileID: 4566168443633376223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2638988787694297204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5513967416980879021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ed1b46205160641927c1002a0f1f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 6889411433013599034, guid: fbc8ca851777a8f4ca692bf097f14767, type: 3}
+  ShootFeedback:
+  - {fileID: 9182383168928530943, guid: dfe9c7f5e0842f14bb0f314568f39248, type: 3}
+  ReloadFeedback:
+  - {fileID: 6321886024753315671, guid: febfe5b8edc025a4fb56ded547336251, type: 3}
+  WeaponName: Brick
+  CurrentWeapon: {fileID: 0}
+  RemainingBulletLeft: {fileID: 0}
+  ShootInterval: 0.5
+  FireMode: 0
+  BulletAmount: 3
+  ReloadTime: 1
+  animator: {fileID: 0}
 --- !u!4 &7238816696435801295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6569409831430874896, guid: 6858ffcadf1892b4cadb273cb5459774, type: 3}

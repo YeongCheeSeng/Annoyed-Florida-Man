@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2531780897749250986}
-  - component: {fileID: 8676861142891938805}
+  - component: {fileID: 4597592673107621305}
   m_Layer: 7
   m_Name: BulletSpawnPos
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6216050641218456178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8676861142891938805
+--- !u!114 &4597592673107621305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1458580565913044160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c0743b179944c408d75ac35cc98b2e, type: 3}
+  m_Script: {fileID: 11500000, guid: a6401ea816510e14ebc1625df06f0a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   Projectile: {fileID: 1470322548788691145, guid: 787db29dc1b2a98418a72cb072aee1ee, type: 3}
   ShootFeedback:
   - {fileID: 5832489421389813996, guid: de5a6ca953e39a7448b55c2a234a5be8, type: 3}
-  ReloadFeedback: []
   ShootInterval: 2
 --- !u!1 &1618340832095189235
 GameObject:
@@ -68,14 +67,13 @@ GameObject:
   - component: {fileID: 4820528017341333828}
   - component: {fileID: 4356691710838470186}
   - component: {fileID: 7314465431465384593}
-  - component: {fileID: 6620049403000915710}
   m_Layer: 7
   m_Name: Boss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2281859978867375860
 Transform:
   m_ObjectHideFlags: 0
@@ -224,8 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 4.5
-  distanceBetween: 20
+  speed: 4
+  distanceBetween: 10
   _isFollowingTarget: 0
 --- !u!114 &8764963627580579654
 MonoBehaviour:
@@ -240,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  range: 5
+  range: 4
   maxDistance: 10
   waitTime: 0
 --- !u!114 &8639777973632484326
@@ -312,19 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerMaskToIgnore: 7
---- !u!114 &6620049403000915710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618340832095189235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea6e5e89be5b734a8733859a150c2c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 1618340832095189235}
 --- !u!1 &2505041392165688879
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +561,7 @@ GameObject:
   - component: {fileID: 1775690142338071253}
   - component: {fileID: 6570817288588396702}
   - component: {fileID: 2193440644487435308}
+  - component: {fileID: 485690623586563792}
   m_Layer: 7
   m_Name: Canvas (Enemy)
   m_TagString: Untagged
@@ -666,6 +652,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &485690623586563792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619517158408797546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea6e5e89be5b734a8733859a150c2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1618340832095189235}
 --- !u!1 &7157630880308546801
 GameObject:
   m_ObjectHideFlags: 0

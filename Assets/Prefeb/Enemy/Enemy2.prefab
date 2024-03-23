@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 8275224462620842576}
   - component: {fileID: 7043164318421380439}
   - component: {fileID: 5776253203540704800}
+  - component: {fileID: 2986619978525115611}
   m_Layer: 7
   m_Name: Canvas (Enemy)
   m_TagString: Untagged
@@ -294,6 +295,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2986619978525115611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508465202105022869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea6e5e89be5b734a8733859a150c2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 4352367511845045306}
 --- !u!1 &4352367511845045306
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +326,6 @@ GameObject:
   - component: {fileID: 7635638345063043545}
   - component: {fileID: 8159317977317598780}
   - component: {fileID: 4233352477805494621}
-  - component: {fileID: 775982625417852466}
   m_Layer: 7
   m_Name: Enemy2
   m_TagString: Enemy
@@ -555,19 +568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerMaskToIgnore: 7
---- !u!114 &775982625417852466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4352367511845045306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea6e5e89be5b734a8733859a150c2c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 4352367511845045306}
 --- !u!1 &7959403807312141109
 GameObject:
   m_ObjectHideFlags: 0

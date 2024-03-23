@@ -28,9 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
-        Debug.Log("movement.x: " + movement.x);
-        Debug.Log("movement.y: " + movement.y);
+        movement.Normalize();
 
         Flip();
         Animation();

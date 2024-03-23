@@ -128,6 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7756465141692529687, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
   m_PrefabInstance: {fileID: 935658510}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &78217299 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3173256076925360016, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+  m_PrefabInstance: {fileID: 935658510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &207309320 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5166818068587901916, guid: 1cf4e8f8df34f7848b8349017d4b77af, type: 3}
@@ -389,6 +394,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3811581104317434405, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811581104317434405, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
       propertyPath: CurrentWeapon
       value: 
       objectReference: {fileID: 207309322}
@@ -447,7 +456,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9119457155324729808, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1648270474}
   m_SourcePrefab: {fileID: 100100000, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
 --- !u!1 &1000064983
 GameObject:
@@ -543,6 +555,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1648270471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9119457155324729808, guid: 3527dbdf7fb8be04bb9ef379142b5900, type: 3}
+  m_PrefabInstance: {fileID: 935658510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648270474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648270471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ed1b46205160641927c1002a0f1f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 6846879744770331636, guid: da94c262e4d7658418c68be6df374521, type: 3}
+  ShootFeedback:
+  - {fileID: 9182383168928530943, guid: 7f6e7ab83de8fa745aa2c6c7a8ff7fde, type: 3}
+  ReloadFeedback:
+  - {fileID: 6321886024753315671, guid: 9f0baf3c594d4124b921d5ceea21e828, type: 3}
+  WeaponName: Pistol
+  CurrentWeapon: {fileID: 207309322}
+  RemainingBulletLeft: {fileID: 1626293347}
+  ShootInterval: 0.2
+  FireMode: 0
+  BulletAmount: 12
+  ReloadTime: 2
+  animator: {fileID: 78217299}
 --- !u!1001 &269351172324704810
 PrefabInstance:
   m_ObjectHideFlags: 0

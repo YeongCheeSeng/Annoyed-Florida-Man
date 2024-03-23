@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFollowTarget : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject target;     
     public float speed;
     public float distanceBetween;
 
@@ -58,7 +58,7 @@ public class EnemyFollowTarget : MonoBehaviour
         //}
         float distance = Vector2.Distance(transform.position, target.transform.position);
         Vector2 direction = target.transform.position - transform.position;
-        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         if (distance < distanceBetween)
         {
             _isFollowingTarget = true;
@@ -81,6 +81,7 @@ public class EnemyFollowTarget : MonoBehaviour
         else
         {
             _isFollowingTarget = false;
+            return;
         }
     }
 }

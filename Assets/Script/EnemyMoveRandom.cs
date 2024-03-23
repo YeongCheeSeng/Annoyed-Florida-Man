@@ -1,11 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.PlasticSCM.Editor.WebApi;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMoveRandom : MonoBehaviour
 {
@@ -32,7 +27,6 @@ public class EnemyMoveRandom : MonoBehaviour
 
     private void Update()
     {
-
         if (followTarget._isFollowingTarget == true)
         {
             return;

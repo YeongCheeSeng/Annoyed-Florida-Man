@@ -24,7 +24,7 @@ public class Shoot1 : MonoBehaviour
     public Animator animator;
 
 
-    private float ShootCooldown; // link with shoot interval
+    //private float ShootCooldown; // link with shoot interval
     private bool CanShoot;
     private int CurrentBullet;
     private bool CanReload;
@@ -39,7 +39,7 @@ public class Shoot1 : MonoBehaviour
 
     private void Start()
     {
-        ShootCooldown = 0;
+        //ShootCooldown = 0;
         CanShoot = true;
         CanReload = true;
 

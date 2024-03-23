@@ -19,6 +19,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = 1f;
+            return;
         }
         else
         {
@@ -36,7 +37,7 @@ public class PlayerHealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthBar != null)
+        if (healthBar != null && _characterHealth != null)
         {
             float currentHealth = _characterHealth.CurrentHealth;
             float maxHealth = _characterHealth.MaxHealth;

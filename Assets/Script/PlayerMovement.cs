@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.magnitude > 1)
         movement.Normalize();
 
         Flip();

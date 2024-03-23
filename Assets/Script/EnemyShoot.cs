@@ -9,7 +9,6 @@ public class EnemyShoot : MonoBehaviour
     public GameObject Target;
     public GameObject Projectile;
     public GameObject[] ShootFeedback;
-    public GameObject[] ReloadFeedback;
     public float ShootInterval;
 
     private Transform FeedbackSpawnPos;
@@ -41,9 +40,6 @@ public class EnemyShoot : MonoBehaviour
 
     private void ShootTarget() 
     {
-        if (Target == null)
-            return;
-
         Vector2 direction = Target.transform.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 

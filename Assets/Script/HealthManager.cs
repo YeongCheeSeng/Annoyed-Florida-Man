@@ -25,16 +25,24 @@ public class HealthManager : MonoBehaviour
             healthBar[i] = GetHealthBarID(_character[i]);
         }
 
-        for (int i = 0; i < healthBar.Length; i++)
+        //for (int i = 0; i < healthBar.Length; i++)
+        //{
+        //    if (healthBar[i] != null)
+        //    {
+        //        healthBar[i].fillAmount = 1f;
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Health bar not found for enemy: " + _character[i].name);
+        //    }
+        //}
+
+        foreach (Image bar in healthBar)
         {
-            if (healthBar[i] != null)
-            {
-                healthBar[i].fillAmount = 1f;
-            }
-            else
-            {
-                Debug.LogError("Health bar not found for enemy: " + _character[i].name);
-            }
+            if (bar != null)
+                bar.fillAmount = 1;
+
+            return;
         }
 
         //_characterHealth = _character.GetComponent<Health>();

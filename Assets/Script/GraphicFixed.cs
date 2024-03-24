@@ -7,7 +7,7 @@ public class GraphicFixed : MonoBehaviour
 {
     private PlayerMovement _playermovement;
     private SpriteRenderer _spriteRenderer;
-    [SerializeField]private bool flipedX = false;
+    private bool flipedX = false;
     // Start is called before the first frame update
     void Start()
     {

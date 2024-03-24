@@ -15,7 +15,7 @@ public class EnemyMoveRandom : MonoBehaviour
 
     Vector2 wayPoint;
     private EnemyFollowTarget followTarget;
-    private bool _facingRight = true;
+    //private bool _facingRight = true;
     private Vector2 direction;
     private bool isWaiting;
 

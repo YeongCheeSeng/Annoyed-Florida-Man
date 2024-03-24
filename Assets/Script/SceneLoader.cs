@@ -7,33 +7,16 @@ using UnityEngine.UI;
 
 public class EnterScene : MonoBehaviour
 {
+    public string SceneName;
+
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void NextPage_1()
+    public void LoadScene()
     {
-        SceneManager.LoadScene("CutScene2");
-    }
-
-    public void NextPage_2()
-    {
-        SceneManager.LoadScene("CutScene3");
-    }
-
-    public void PreviousPage_2()
-    {
-        SceneManager.LoadScene("CutScene1");
-    }
-
-    public void PreviousPage_3()
-    {
-        SceneManager.LoadScene("CutScene2");
-    }
-    public void StartGame()
-    {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneName);
     }
 
     private void FixedUpdate()

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd1307b95bc0347a5896a31f6a29a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: CutScene2
 --- !u!4 &10094370
 Transform:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 10094369}
         m_TargetAssemblyTypeName: EnterScene, Assembly-CSharp
-        m_MethodName: NextPage_1
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

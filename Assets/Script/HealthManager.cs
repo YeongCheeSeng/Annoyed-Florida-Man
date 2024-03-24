@@ -16,6 +16,9 @@ public class HealthManager : MonoBehaviour
     {
         GameObject[] _character = GameObject.FindGameObjectsWithTag("Enemy");
 
+        if (_character == null || _character.Length == 0)
+            return;
+
         _characterHealth = new Health[_character.Length];
         healthBar = new Image[_character.Length];
 
@@ -23,27 +26,18 @@ public class HealthManager : MonoBehaviour
         {
             _characterHealth[i] = _character[i].GetComponent<Health>();
             healthBar[i] = GetHealthBarID(_character[i]);
+
+            healthBar[i].fillAmount = 1f;
         }
 
-        //for (int i = 0; i < healthBar.Length; i++)
+        //foreach (Image bar in healthBar)
         //{
-        //    if (healthBar[i] != null)
-        //    {
-        //        healthBar[i].fillAmount = 1f;
-        //    }
-        //    else
-        //    {
-        //        Debug.LogError("Health bar not found for enemy: " + _character[i].name);
-        //    }
+        //    if (bar != null)
+        //        bar.fillAmount = 1;
+
+        //    if (bar == null)
+        //        return;
         //}
-
-        foreach (Image bar in healthBar)
-        {
-            if (bar != null)
-                bar.fillAmount = 1;
-
-            return;
-        }
 
         //_characterHealth = _character.GetComponent<Health>();
 
@@ -57,7 +51,7 @@ public class HealthManager : MonoBehaviour
     {
         for (int i = 0; i < _characterHealth.Length; i++)
         {
-            if (healthBar[i] != null)
+            if (healthBar[i] != null && healthBar[i] != null)
             {
                 float currentHealth = _characterHealth[i].CurrentHealth;
                 float maxHealth = _characterHealth[i].MaxHealth;

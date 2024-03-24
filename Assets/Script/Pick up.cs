@@ -5,13 +5,12 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public GameObject Weapon;
-    public GameObject[] PickUpFeedbacks;
+    public GameObject[] PickUpFeedbacks; 
 
     public LayerMask TargetLayerMask;
     public LayerMask IgnoreLayerMask;
 
     private string weaponTag = "Weapon";
-    private PlayerMovement _facing;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -23,9 +22,10 @@ public class PickUp : MonoBehaviour
             DeactivateWeaponWithTag(weaponTag);
             Weapon.SetActive(true);
             SpawnFeedback();
-            Destroy(this.gameObject);          
+            Destroy(this.gameObject);           
         }
     }
+
     void SpawnFeedback()
     {
         foreach (var feedback in PickUpFeedbacks)

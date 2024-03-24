@@ -7,11 +7,11 @@ using UnityEngine.Assertions.Must;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform Player;
     //private Transform _transform; 
     public float Offset_X; 
     public float Offset_Y;
 
+    private Transform Player;
     private float transformX;
     private float transformY;
     private Transform currentPos;
@@ -29,6 +29,9 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player").transform;
+
+        if (Player == null ) { return; }
+
         currentPos = Player;
 
         //_transform = GetComponent<Transform>();
@@ -55,12 +58,6 @@ public class FollowPlayer : MonoBehaviour
         {
             fPFlipedX = false;
         }
-
-        //if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
-        //{
-        //    //fPFlipedX = true;
-        //    return;
-        //}
 
         if (fPFlipedX == false)
         {

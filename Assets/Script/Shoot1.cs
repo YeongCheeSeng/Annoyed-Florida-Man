@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class Shoot1 : MonoBehaviour
     private int CurrentBullet;
     private bool CanReload;
     private bool isShooting;
+    public bool isReloading;
 
     public enum FireModes
     {
@@ -41,11 +43,11 @@ public class Shoot1 : MonoBehaviour
     {
         //ShootCooldown = 0;
         CanShoot = true;
-        CanReload = true;
 
         CurrentBullet = BulletAmount;
         FeedbackSpawnPos = GetComponent<Transform>();
         isShooting = false;
+        isReloading = false;
     }
 
 
@@ -70,7 +72,7 @@ public class Shoot1 : MonoBehaviour
                     if (!CanShoot)
                         return;
 
-                    if (Input.GetButtonDown("Fire1") && CurrentBullet > 0)
+                    if (Input.GetButtonDown("Fire1") && CurrentBullet > 0 && !isReloading)
                     {
                         Debug.Log("SingleFire");
                         StartCoroutine(IShoot());
@@ -84,7 +86,7 @@ public class Shoot1 : MonoBehaviour
                         return;
 
                     //if (Input.GetButton("Fire1") && ShootCooldown <= 0 && CurrentBullet > 0)
-                    if (Input.GetButton("Fire1") && CurrentBullet > 0)
+                    if (Input.GetButton("Fire1") && CurrentBullet > 0 && !isReloading)
                     {
                         Debug.Log("AutoFire");
                         StartCoroutine(IShoot());
@@ -127,6 +129,7 @@ public class Shoot1 : MonoBehaviour
         yield return new WaitForSeconds(ShootInterval);
         isShooting = false;
         CanShoot = true;
+        
     }
 
     //IEnumerator BurstShoot()
@@ -142,7 +145,13 @@ public class Shoot1 : MonoBehaviour
     private void Reload()
     {
         if (CurrentBullet == BulletAmount)
+        {
+            CanReload = false;           
             return;
+        }   
+
+        if (CanReload == false && isReloading == false)
+            CanReload = true;
 
         if ((Input.GetKeyDown(KeyCode.R) && CanReload == true) || (CurrentBullet == 0 && CanReload == true))
         {
@@ -155,10 +164,12 @@ public class Shoot1 : MonoBehaviour
     {
         CanShoot = false;
         CanReload = false;
+        isReloading = true;
         yield return new WaitForSeconds(ReloadTime);
         CurrentBullet = BulletAmount;
         CanShoot = true;
         CanReload = true;
+        isReloading = false;
     }
 
     //Spawn Feedback
@@ -186,12 +197,12 @@ public class Shoot1 : MonoBehaviour
         if (RemainingBulletLeft == null)
             return;
 
-        if (CurrentBullet > 0)
+        if (CurrentBullet > 0 && isReloading == false)
         {
             RemainingBulletLeft.text = "Bullet: " + CurrentBullet;
         }
 
-        if (CanShoot == false && CanReload == false)
+        if (CanShoot == false && isReloading == true)
         {
             RemainingBulletLeft.text = "Bullet: Reloading";
         }
@@ -203,7 +214,6 @@ public class Shoot1 : MonoBehaviour
             return;
 
         CurrentWeapon.text = "Weapon: " + WeaponName;
-
     }
 
     //Animation

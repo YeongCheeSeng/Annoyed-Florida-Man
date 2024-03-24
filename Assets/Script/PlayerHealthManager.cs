@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthManager : MonoBehaviour
 {
     public GameObject _character;
-    private string healthBarID = "Health";
+    private string healthBarID = "PlayerHealth";
     private Health _characterHealth;
     private Image healthBar;
 
@@ -43,7 +43,12 @@ public class PlayerHealthManager : MonoBehaviour
             float maxHealth = _characterHealth.MaxHealth;
             healthBar.fillAmount = currentHealth / maxHealth;
         }
-    
+        
+
+        if (healthBar == null) 
+        {
+            return;
+        }
 
         //if (healthBar == null || _character == null)
         //{

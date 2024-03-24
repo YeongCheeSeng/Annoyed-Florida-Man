@@ -14,26 +14,13 @@ public class EnemyShoot1 : MonoBehaviour
 
     private Transform FeedbackSpawnPos;
     private bool CanShoot;
-    private EnemyFollowTarget enemyFollowTarget;
+    public PointingTarget pointingTarget;
 
     // Start is called before the first frame update
     void Start()
     {
         FeedbackSpawnPos = GetComponent<Transform>();
         StartCoroutine(Wait());
-
-        GameObject enemy = GameObject.FindWithTag("Enemy");
-
-        if (enemy != null)
-        {
-            enemyFollowTarget = enemy.GetComponent<EnemyFollowTarget>();
-
-            if (enemyFollowTarget == null)
-                return;
-        }
-
-        if (enemy == null)
-            return;
     }
 
     // Update is called once per frame
@@ -42,34 +29,28 @@ public class EnemyShoot1 : MonoBehaviour
         if (Target == null)
             return;
 
-        if (enemyFollowTarget != null)
+        if (Target != null && pointingTarget._isPointingTarget)
         {
-            if (enemyFollowTarget._isFollowingTarget == false)
-                return;
+            ShootTarget();
         }
-
-        ShootTarget();
     }
 
     private void ShootTarget()
     {
-        if (Target == null)
+        if (CanShoot == false)
             return;
 
         Vector2 direction = Target.transform.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
-        if (CanShoot)
-        {
-            StartCoroutine(Shoot());
-            SpawnShootFeedback();
-        }
+        StartCoroutine(Shoot());
+        SpawnShootFeedback();    
     }
 
     IEnumerator Shoot()
     {
-        GameObject.Instantiate(Projectile, transform.position, transform.rotation);
         CanShoot = false;
+        GameObject.Instantiate(Projectile, transform.position, transform.rotation);
         yield return new WaitForSeconds(ShootInterval);
         CanShoot = true;
     }

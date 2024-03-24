@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8950070328483694818}
   - component: {fileID: 888734490927241091}
-  - component: {fileID: 6760048599235209488}
+  - component: {fileID: 5525540030680279478}
   m_Layer: 10
   m_Name: PickUp (Pistol)
   m_TagString: PickUp
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6760048599235209488
+--- !u!114 &5525540030680279478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

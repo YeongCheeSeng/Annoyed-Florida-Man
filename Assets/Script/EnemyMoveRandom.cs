@@ -13,6 +13,8 @@ public class EnemyMoveRandom : MonoBehaviour
     [SerializeField]
     float waitTime;
 
+    public LayerMask TargetLayerMask;
+
     Vector2 wayPoint;
     private EnemyFollowTarget followTarget;
     //private bool _facingRight = true;

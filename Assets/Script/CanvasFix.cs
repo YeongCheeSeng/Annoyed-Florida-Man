@@ -25,16 +25,16 @@ public class CanvasFix : MonoBehaviour
 
         if (targetScale.x == 1 && _isFliped == true)
         {
-            _isFliped = false;
             currentScale.x = -currentScale.x;
             transform.localScale = currentScale;
+            _isFliped = false;
         }
 
         if (targetScale.x == -1 && _isFliped == false)
         {
-            _isFliped = true;
             currentScale.x = -currentScale.x;
             transform.localScale = currentScale;
+            _isFliped = true;
         }
     }
 }

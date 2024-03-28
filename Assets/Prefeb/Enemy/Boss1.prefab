@@ -49,6 +49,7 @@ MonoBehaviour:
   ShootFeedback:
   - {fileID: 5832489421389813996, guid: de5a6ca953e39a7448b55c2a234a5be8, type: 3}
   ShootInterval: 2
+  pointingTarget: {fileID: 3188154604343198332}
 --- !u!1 &1618340832095189235
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,13 +68,16 @@ GameObject:
   - component: {fileID: 4820528017341333828}
   - component: {fileID: 4356691710838470186}
   - component: {fileID: 7314465431465384593}
+  - component: {fileID: 7551261402979116894}
+  - component: {fileID: 3156150594883382971}
+  - component: {fileID: 5373061717456693233}
   m_Layer: 7
   m_Name: Boss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2281859978867375860
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +109,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -216,7 +220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618340832095189235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5870c2d37a7ea04ca35496c87346e0d, type: 3}
   m_Name: 
@@ -232,7 +236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618340832095189235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3d224b9d53ecf14e858a071b6d06cc3, type: 3}
   m_Name: 
@@ -241,6 +245,9 @@ MonoBehaviour:
   range: 4
   maxDistance: 10
   waitTime: 0
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8639777973632484326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +317,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerMaskToIgnore: 7
+--- !u!114 &7551261402979116894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618340832095189235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &3156150594883382971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618340832095189235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f78ad3c5d7074e4c94a76785f703b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Speed: 300
+  nextWayPointDistance: 2
+  ChaseCooldown: 0.5
+  distanceBetweenPlayer: 10
+  EnemyGraphic: {fileID: 2281859978867375860}
+  _isFollowingTarget: 0
+--- !u!114 &5373061717456693233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618340832095189235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188b03afbf54d29499c9a6ea0288c949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomPoint: {fileID: 0}
+  Speed: 300
+  nextWayPointDistance: 2
+  MoveCooldown: 1
+  EnemyGraphic: {fileID: 2281859978867375860}
+  FollowingTarget: {fileID: 3156150594883382971}
 --- !u!1 &2505041392165688879
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  _isPointingTarget: 0
+  enemyFollowTarget: {fileID: 5465097963180537759}
 --- !u!1 &5619517158408797546
 GameObject:
   m_ObjectHideFlags: 0

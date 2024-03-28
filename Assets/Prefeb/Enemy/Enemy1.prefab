@@ -320,13 +320,14 @@ GameObject:
   - component: {fileID: 618615954190543327}
   - component: {fileID: 8975450425019600757}
   - component: {fileID: 3188591853884200803}
-  - component: {fileID: 3843266046646263907}
-  - component: {fileID: 8286025162928217359}
   - component: {fileID: 84272356532516285}
   - component: {fileID: 2242590368144907847}
   - component: {fileID: 4856033260708418951}
   - component: {fileID: 1096010469102508220}
   - component: {fileID: 471644003451336449}
+  - component: {fileID: 4881876403119427186}
+  - component: {fileID: 1398360342823476354}
+  - component: {fileID: 1277425409779267583}
   m_Layer: 7
   m_Name: Enemy1
   m_TagString: Enemy
@@ -364,7 +365,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -468,38 +469,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 2.7}
   m_EdgeRadius: 0
---- !u!114 &3843266046646263907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4487777355650131446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5870c2d37a7ea04ca35496c87346e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 1
-  distanceBetween: 6
-  _isFollowingTarget: 0
---- !u!114 &8286025162928217359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4487777355650131446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d224b9d53ecf14e858a071b6d06cc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  range: 0.5
-  maxDistance: 3
-  waitTime: 1
 --- !u!114 &84272356532516285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,14 +545,78 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4487777355650131446}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7de473b01dddc6b4b829af61ed72b1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DropChance: 100
-  RandomLoots:
-  - {fileID: 0}
+  RandomLoots: []
+--- !u!114 &4881876403119427186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487777355650131446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &1398360342823476354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487777355650131446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f78ad3c5d7074e4c94a76785f703b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Speed: 200
+  nextWayPointDistance: 1
+  ChaseCooldown: 0.5
+  distanceBetweenPlayer: 10
+  EnemyGraphic: {fileID: 4337314080250384734}
+  _isFollowingTarget: 0
+--- !u!114 &1277425409779267583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487777355650131446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188b03afbf54d29499c9a6ea0288c949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomPoint: {fileID: 0}
+  Speed: 200
+  nextWayPointDistance: 1
+  MoveCooldown: 1
+  EnemyGraphic: {fileID: 4337314080250384734}
+  FollowingTarget: {fileID: 1398360342823476354}
 --- !u!1 &6729566578652282274
 GameObject:
   m_ObjectHideFlags: 0

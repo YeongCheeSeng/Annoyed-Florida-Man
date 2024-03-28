@@ -7,7 +7,7 @@ public class PointingTarget : MonoBehaviour
     public GameObject Target;
     public bool _isPointingTarget;
 
-    public EnemyFollowTarget enemyFollowTarget;
+    public EnemyAI enemyFollowTarget;
 
     private void Start()
     {
